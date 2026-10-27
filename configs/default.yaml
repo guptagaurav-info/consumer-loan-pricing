@@ -1,0 +1,42 @@
+# Every rule, split and threshold below was fixed before results were examined.
+out_dir: reports
+loans_csv: data/raw/accepted_2007_to_2018Q4.csv
+loans_cache: data/loans.pkl
+treasury: data/raw/daily_treasury_yield.parquet
+snapshot: "2019-03-01"          # last payment month in the file (data cut)
+
+term_months: 36                 # main analysis: 36-month loans (complete through the 2015 vintages)
+complete_through: "2015-12-01"  # last issue month whose 36-month term ended before the data cut
+recognition_lag_months: 4       # a stopped loan shows as 31+ days late only after ~4 months
+recovery_lag_months: 6          # recoveries arrive ~6 months after the last payment
+servicing_fee: 0.01             # investor servicing fee: 1% of each borrower payment (platform's published fee)
+
+bad_status: ["Charged Off", "Default", "Late (31-120 days)"]
+
+early_read:
+  mobs: [6, 12, 18, 24]
+  evaluate_from: "2012-01-01"   # quarterly vintages evaluated: 2012Q1 .. 2015Q4
+
+screen:
+  train: ["2010-01-01", "2013-12-01"]
+  valid: ["2014-01-01", "2014-12-01"]
+  test:  ["2015-01-01", "2015-12-01"]
+  exclude_shares: [0.10, 0.20]  # drop the riskiest share within each sub-grade
+  bootstrap: 200               # resamples (within sub-grade) for the confidence band on the screen uplift
+  seed: 7
+  lgbm:
+    learning_rate: 0.05
+    num_leaves: 31
+    min_child_samples: 200
+    feature_fraction: 0.8
+    bagging_fraction: 0.8
+    bagging_freq: 1
+    lambda_l2: 1.0
+    n_estimators: 2000
+    early_stopping_rounds: 100
+
+book_usd: 1000000000            # illustrative $1bn of loan purchases for the dollar translation
+
+sources:
+  accepted_2007_to_2018Q4.csv: {url: https://huggingface.co/datasets/codesignal/lending-club-loan-accepted/resolve/main/accepted_2007_to_2018Q4.csv, sha256: 3eae03c28fd9d2e8a076ebeb73507e8d4d0f44d90500decdb0936e0933d1f36a}
+  daily_treasury_yield.parquet: {url: https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/US/daily_treasury_yield.parquet, sha256: 37fca5d22b8580efc93225213d0c4f6d7ef9cf5b183cf7a427cd22b274606171}

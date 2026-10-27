@@ -1,0 +1,342 @@
+{
+  "sample": {
+    "loans_36m_all": 1607316,
+    "loans_36m_complete": 618731,
+    "funded_complete_usd": 7727776025.0,
+    "complete_vintages": "2007-06 to 2015-12"
+  },
+  "pool_complete": {
+    "loans": 618731.0,
+    "funded": 7727776025.0,
+    "rate": 0.11794177778430788,
+    "default_rate": 0.13518152526942576,
+    "net_loss_rate": 0.06993999819222514,
+    "ust3": 0.0087223603729587,
+    "irr": 0.063225867185706,
+    "excess": 0.05450350681274729,
+    "shortfall": 0.05471591059860188
+  },
+  "by_grade": {
+    "A": {
+      "loans": 142925,
+      "funded": 1982948450.0,
+      "rate": 0.07220097287004246,
+      "default_rate": 0.05225444715922897,
+      "net_loss_rate": 0.023738236671606138,
+      "ust3": 0.008873345918036917,
+      "irr": 0.05350838719074513,
+      "excess": 0.04463504127270822,
+      "shortfall": 0.018692585679297324
+    },
+    "B": {
+      "loans": 211692,
+      "funded": 2621856550.0,
+      "rate": 0.10835355841068807,
+      "default_rate": 0.1098385607709926,
+      "net_loss_rate": 0.053149781001091266,
+      "ust3": 0.008557846526875633,
+      "irr": 0.06950031237559906,
+      "excess": 0.060942465848723426,
+      "shortfall": 0.03885324603508901
+    },
+    "C": {
+      "loans": 161843,
+      "funded": 1919111275.0,
+      "rate": 0.13940775024304072,
+      "default_rate": 0.17867523080442535,
+      "net_loss_rate": 0.09268494349025089,
+      "ust3": 0.00879766825156123,
+      "irr": 0.06774649740215355,
+      "excess": 0.05894882915059232,
+      "shortfall": 0.07166125284088717
+    },
+    "D": {
+      "loans": 76074,
+      "funded": 897681600.0,
+      "rate": 0.17173849086382878,
+      "default_rate": 0.24048217653118878,
+      "net_loss_rate": 0.13397346675378266,
+      "ust3": 0.00862267737092666,
+      "irr": 0.0629452902312082,
+      "excess": 0.05432261286028155,
+      "shortfall": 0.10879320063262057
+    },
+    "E": {
+      "loans": 21410,
+      "funded": 256781925.0,
+      "rate": 0.1975105490939745,
+      "default_rate": 0.2981513398966847,
+      "net_loss_rate": 0.17490775686135496,
+      "ust3": 0.008948515898328912,
+      "irr": 0.047553927697981946,
+      "excess": 0.03860541179965303,
+      "shortfall": 0.14995662139599256
+    },
+    "F": {
+      "loans": 4265,
+      "funded": 42516775.0,
+      "rate": 0.23535632822932023,
+      "default_rate": 0.354654721577542,
+      "net_loss_rate": 0.2189041752684007,
+      "ust3": 0.009041943560131254,
+      "irr": 0.04139755540821666,
+      "excess": 0.0323556118480854,
+      "shortfall": 0.19395877282110358
+    },
+    "G": {
+      "loans": 522,
+      "funded": 6879450.0,
+      "rate": 0.25294885508269305,
+      "default_rate": 0.38389696850765687,
+      "net_loss_rate": 0.24701887756301674,
+      "ust3": 0.00948321371894723,
+      "irr": 0.024088383628167342,
+      "excess": 0.014605169909220112,
+      "shortfall": 0.2288604714545257
+    }
+  },
+  "early_read_mae": {
+    "last_seasoned": 0.027669076819052726,
+    "grade_mix": 0.020260081765650043,
+    "read_6": 0.03706115626816707,
+    "read_12": 0.019025894424535297,
+    "read_18": 0.007044668986247068,
+    "read_24": 0.0031400764673795295
+  },
+  "early_read_n": 16,
+  "screen": {
+    "n_train": 166459,
+    "n_valid": 162570,
+    "n_test": 283173,
+    "bad_rate_train": 0.12388636240755982,
+    "bad_rate_test": 0.14900078750445842,
+    "best_iteration": 194,
+    "train_seconds": 11.4,
+    "auc": {
+      "grade_only": 0.6777350105139239,
+      "linear_scorecard": 0.6776593320580847,
+      "gbm": 0.6852485811708857
+    },
+    "auc_within_subgrade": {
+      "grade_only": 0.5,
+      "linear_scorecard": 0.5635514029185673,
+      "gbm": 0.572441738406188
+    },
+    "brier": {
+      "grade_only": 0.1218036803444845,
+      "linear_scorecard": 0.12140519279075244,
+      "gbm": 0.12049595767947174
+    },
+    "psi_score_train_vs_test": 0.006137402880848742,
+    "mean_pd_vs_actual_test": {
+      "gbm": 0.12677752060366015,
+      "linear_scorecard": 0.12466265915612625,
+      "grade_only": 0.12412626298428175,
+      "actual": 0.14900078750445842
+    },
+    "top_features_gain_share": {
+      "sg_code": 0.28,
+      "log_inc": 0.117,
+      "fico": 0.085,
+      "pay_to_inc": 0.061,
+      "purpose": 0.059,
+      "dti": 0.05,
+      "log_revol_bal": 0.048,
+      "hist_years": 0.044
+    },
+    "calibration": [
+      {
+        "q": 0,
+        "pred": 0.0315,
+        "actual": 0.0315
+      },
+      {
+        "q": 1,
+        "pred": 0.0521,
+        "actual": 0.0614
+      },
+      {
+        "q": 2,
+        "pred": 0.069,
+        "actual": 0.0828
+      },
+      {
+        "q": 3,
+        "pred": 0.0852,
+        "actual": 0.1038
+      },
+      {
+        "q": 4,
+        "pred": 0.1023,
+        "actual": 0.1274
+      },
+      {
+        "q": 5,
+        "pred": 0.1212,
+        "actual": 0.1505
+      },
+      {
+        "q": 6,
+        "pred": 0.1432,
+        "actual": 0.1738
+      },
+      {
+        "q": 7,
+        "pred": 0.17,
+        "actual": 0.203
+      },
+      {
+        "q": 8,
+        "pred": 0.2072,
+        "actual": 0.244
+      },
+      {
+        "q": 9,
+        "pred": 0.286,
+        "actual": 0.3117
+      }
+    ],
+    "uplift_20pct_bootstrap": {
+      "mean": 0.003938625195918063,
+      "p05": 0.0036348852258782038,
+      "p95": 0.004231405435372959,
+      "share_positive": 1.0,
+      "reps": 200
+    }
+  },
+  "robustness_grade_irr": {
+    "base": {
+      "A": 0.0535,
+      "B": 0.0695,
+      "C": 0.0677,
+      "D": 0.0629,
+      "E": 0.0476,
+      "F": 0.0414,
+      "G": 0.0241
+    },
+    "recoveries_after_12m": {
+      "A": 0.0534,
+      "B": 0.0693,
+      "C": 0.0674,
+      "D": 0.0625,
+      "E": 0.0471,
+      "F": 0.0408,
+      "G": 0.0237
+    },
+    "recoveries_after_3m": {
+      "A": 0.0535,
+      "B": 0.0696,
+      "C": 0.0679,
+      "D": 0.0632,
+      "E": 0.0478,
+      "F": 0.0417,
+      "G": 0.0243
+    },
+    "no_servicing_fee": {
+      "A": 0.0629,
+      "B": 0.0793,
+      "C": 0.0778,
+      "D": 0.073,
+      "E": 0.0576,
+      "F": 0.0512,
+      "G": 0.0337
+    },
+    "vintages_2010_2013": {
+      "A": 0.0569,
+      "B": 0.0838,
+      "C": 0.0969,
+      "D": 0.1007,
+      "E": 0.11,
+      "F": 0.0903,
+      "G": 0.0735
+    },
+    "vintages_2014_2015": {
+      "A": 0.0524,
+      "B": 0.0635,
+      "C": 0.0585,
+      "D": 0.0477,
+      "E": 0.0287,
+      "F": 0.0264,
+      "G": 0.0052
+    }
+  },
+  "business": {
+    "late_vintages": "2014Q4-2015Q4",
+    "late_vintages_funded_usd": 4248375575.0,
+    "expected_at_issue": 0.11168917364644189,
+    "actual": 0.1443847275673126,
+    "read_12": 0.1364014420843244,
+    "read_18": 0.14764076810354176,
+    "default_gap": 0.0326955539208707,
+    "severity": 0.5173783773546724,
+    "extra_net_loss_per_bn_usd": 16915972.63429228,
+    "screen20_irr_uplift": 0.003930501950083487,
+    "screen20_uplift_per_bn_usd_per_year": 3930501.950083487,
+    "screen20_net_loss_change": -0.005434556715348371
+  },
+  "open_vintages": [
+    {
+      "vintage": "2016Q1",
+      "observed_mob": 32,
+      "observed": 0.1427,
+      "projected_lifetime": 0.1531,
+      "mix_rate": 0.1112
+    },
+    {
+      "vintage": "2016Q2",
+      "observed_mob": 29,
+      "observed": 0.1431,
+      "projected_lifetime": 0.164,
+      "mix_rate": 0.1145
+    },
+    {
+      "vintage": "2016Q3",
+      "observed_mob": 26,
+      "observed": 0.1434,
+      "projected_lifetime": 0.1791,
+      "mix_rate": 0.1273
+    },
+    {
+      "vintage": "2016Q4",
+      "observed_mob": 23,
+      "observed": 0.1189,
+      "projected_lifetime": 0.167,
+      "mix_rate": 0.1261
+    },
+    {
+      "vintage": "2017Q1",
+      "observed_mob": 20,
+      "observed": 0.0966,
+      "projected_lifetime": 0.1576,
+      "mix_rate": 0.1233
+    },
+    {
+      "vintage": "2017Q2",
+      "observed_mob": 17,
+      "observed": 0.0879,
+      "projected_lifetime": 0.1749,
+      "mix_rate": 0.1222
+    },
+    {
+      "vintage": "2017Q3",
+      "observed_mob": 14,
+      "observed": 0.0689,
+      "projected_lifetime": 0.178,
+      "mix_rate": 0.1235
+    },
+    {
+      "vintage": "2017Q4",
+      "observed_mob": 11,
+      "observed": 0.0476,
+      "projected_lifetime": 0.1789,
+      "mix_rate": 0.1146
+    },
+    {
+      "vintage": "2018Q1",
+      "observed_mob": 8,
+      "observed": 0.0277,
+      "projected_lifetime": 0.1794,
+      "mix_rate": 0.1091
+    }
+  ]
+}
