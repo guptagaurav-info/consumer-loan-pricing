@@ -83,6 +83,22 @@ The vintages still running at the data cut (2016Q1–2018Q1) project to 15–18%
 - Extra net loss per $1bn: 3.27 points of extra default (14.44% actual vs 11.17% expected, 2014Q4–2015Q4, dollar-weighted) × 51.7% net loss per defaulted dollar (all complete loans) ≈ $16.9M.
 - Screen uplift per $1bn a year: 0.39 points × $1bn ≈ $3.9M on the kept book.
 
+## The commercial case
+
+The pipeline is the prototype of a product that every buyer of consumer loans needs: a monthly vintage monitor with re-pricing triggers, plus a within-grade screen. All prices below are illustrative and shown with their arithmetic.
+
+| Element | Detail |
+|---|---|
+| Who pays | Credit funds, insurers and banks buying consumer loans through forward flow; capital-markets teams at lending platforms |
+| Problem in dollars | About $17M of extra net loss per $1bn bought when pricing drifts as in 2014–2015 (3.27-point default gap × 51.7% severity) |
+| Product | Monthly vintage reads against plan, re-pricing triggers, within-grade screen and calibration report, built from the servicer's loan tape |
+| Proof | Month-18 read within 0.7 points of final default; screen +39 bp a year out of sample (band 36–42) |
+| Value to a $1bn-a-year buyer | About $3.9M a year from screening, plus up to $16.9M per $1bn re-priced when a drift is caught. Base case (catching a quarter of one drift): about $8.2M a year |
+| Build vs buy | 10–12 weeks for one quant and one data engineer (tape connectors, monitoring, model documentation); the alternative is analyst spreadsheets and platform reports |
+| Pricing logic | Under 5% of base-case value: monitor $150k a year; monitor plus screen $300k a year (3.7% of $8.2M); or build-and-transfer at $250k plus $75k a year |
+| Adoption risks | Loan-tape access; one-platform validation; regime change in curve shape. Mitigation: a pilot on one programme, back-tested on its own history |
+| Client KPIs | Points of pricing gap caught, months to signal, basis points added, false-trigger rate |
+
 ## Limits
 
 - **One platform, one regime.** Unsecured US instalment loans from one marketplace, priced by one grading system, through a benign economy with no recession inside 2010–2018. Results describe that book, not consumer credit in general.
